@@ -1,0 +1,98 @@
+<div class="avatar__container">
+  <img class="avatar__img" src="./assets/img/avatar.svg" alt="" />
+  <h1 class="typed">Hi, I'm <span class="typedElement"></span></h1>
+  <ul class="social__icons">
+    <li><a href="mailto:mhdafsalvp@gmail.com"><i class="fab fa-google"></i></a></li>
+    <li><a href="https://github.com/Crazycyborg1995" target="_blank"><i class="fab fa-github"></i></a></li>
+    <li><a href="https://codepen.io/crazycyborg1995/" target="_blank"><i class="fab fa-codepen"></i></a></li>
+  </ul>
+</div>
+
+<style>
+  .avatar__container {
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar__img {
+    width: 15rem;
+    backface-visibility: hidden;
+    margin-bottom: 4rem;
+  }
+
+  .typed {
+    font-family: monospace;
+    font-size: 2.8rem;
+  }
+
+  .typedElement {
+    color: #bebd23;
+  }
+
+  .social__icons {
+    padding: 0;
+    list-style: none;
+    margin-top: auto;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social__icons li {
+    display: inline-block;
+    margin: 0.15em;
+    position: relative;
+    font-size: 1.8rem;
+  }
+
+  .social__icons i {
+    color: #fff;
+    position: absolute;
+    top: 2.1rem;
+    left: 2.1rem;
+    transition: all 200ms ease-out;
+  }
+
+  .social__icons a {
+    display: inline-block;
+  }
+
+  .social__icons a::before {
+    transform: scale(1);
+    content: " ";
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    display: block;
+    background: linear-gradient(45deg, #E14ECA, #002a8f);
+    transition: all 200ms ease-out;
+  }
+
+  .social__icons a:hover::before {
+    transform: scale(0);
+    transition: all 200ms ease-in;
+  }
+
+  .social__icons a:hover i {
+    transform: scale(2);
+    background: -webkit-linear-gradient(45deg, #E14ECA, #0043e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 200ms ease-in;
+  }
+
+  @media (max-width : 37.25em) {
+    .avatar__img {
+      width: 12rem;
+    }
+
+    .avatar__container {
+      width: 30rem;
+    }
+  }
+</style>

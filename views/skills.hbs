@@ -1,0 +1,148 @@
+<div class="skill">
+  <ul class="skill__list">
+    <img src="./assets/img/web-programming.svg" class="skill__logo skill__logo--1" alt="">
+    <h1 class="skill__title">Front-end</h1>
+    <li class="skill__items">HTML</li>
+    <li class="skill__items">CSS (incl. flexbox, grid)</li>
+    <li class="skill__items">Sass</li>
+    <li class="skill__items">Bootstrap</li>
+    <li class="skill__items">Javascript (incl. ES6)</li>
+    <li class="skill__items">React JS</li>
+    <li class="skill__items">Redux</li>
+  </ul>
+  <ul class="skill__list">
+    <img src="./assets/img/development.svg" class="skill__logo skill__logo--2" alt="">
+    <h1 class="skill__title">Back-end</h1>
+    <li class="skill__items">Node JS</li>
+    <li class="skill__items">Express JS</li>
+    <li class="skill__items">MongoDB</li>
+    <li class="skill__items">MySQL(PostgreSQL)</li>
+    <li class="skill__items">Firebase(Auth, FireStore)</li>
+    <li class="skill__items">Handlebars.js (or pug)</li>
+  </ul>
+  <ul class="skill__list">
+    <img src="./assets/img/edit-tool.svg" class="skill__logo skill__logo--3" alt="">
+    <h1 class="skill__title">Misc.</h1>
+    <li class="skill__items">Git</li>
+    <li class="skill__items">RESTful API</li>
+    <li class="skill__items">Fetch API, Axios</li>
+    <li class="skill__items">OAuth(passport.js)</li>
+    <li class="skill__items">Webpack Bundler</li>
+    <li class="skill__items">Jest, Mocha</li>
+    <li class="skill__items">Regular Expressions</li>
+  </ul>
+</div>
+
+<style>
+  .skill {
+    width: 80rem;
+    border-radius: 10px;
+    display: flex;
+    background: #fff;
+  }
+
+  .skill__logo {
+    margin-bottom: 2rem;
+  }
+
+  .skill__list {
+    width: 33%;
+    display: grid;
+    grid-template-rows: 6rem 6rem repeat(7, 5rem);
+    text-align: center;
+    align-items: center;
+    list-style: none;
+    padding: 2rem 0.5rem;
+    margin: 0;
+    overflow: hidden;
+  }
+
+
+  .skill__list:not(:last-child) {
+    border-right: 1px solid #eee;
+  }
+
+  .skill__list>*:not(.skill__title) {
+    color: #E14ECA;
+  }
+
+  .skill__items {
+    border-top: 1px dotted #ccc;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+  }
+
+
+  .skill__title {
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: bold;
+    align-self: center;
+  }
+
+  .skill__logo {
+    width: 5rem;
+    justify-self: center;
+  }
+
+  .skill__list:hover {
+    transform: scale(1.02);
+    transition: all 100ms;
+  }
+
+  @media (min-width : 75.1em) {
+    .skill {
+      margin-left: 10rem;
+    }
+  }
+
+  @media (max-width : 75em) {
+    .skill {
+      width: 70rem;
+      margin-left: 10rem;
+    }
+  }
+
+  @media (max-width : 56.25em) {
+    .skill {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width : 50em) {
+    .skill {
+      flex-direction: column;
+      margin: 5rem 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .skill__list {
+      width: 70%;
+      margin: 0 auto 3rem;
+      background: #fff;
+      border-radius: 5px;
+    }
+
+    .skill__list:not(:last-child) {
+      border-right: 0;
+    }
+
+    .skill__list:hover {
+      transform: none;
+    }
+  }
+
+  @media (max-width : 37.5em) {
+    .skill {
+      width: 30rem;
+    }
+
+    .skill__list {
+      width: 100%;
+    }
+  }
+</style>

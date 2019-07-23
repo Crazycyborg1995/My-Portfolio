@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Mohd Afsal | Web Developer</title>
+  <link rel="stylesheet" href="./assets/css/blk-design-system.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <div class="index-page" id="bg-animation">
+    <div class="wrapper">
+      <div class="page-header header-filter">
+        <div class="squares square1"></div>
+        <div class="squares square2"></div>
+        <div class="squares square3"></div>
+        <div class="squares square4"></div>
+        <div class="squares square5"></div>
+        <div class="squares square6"></div>
+        <div class="squares square7"></div>
+        <div class="container">
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="checkbox" id="toggle">
+  <label for="toggle" class="toggle__button">
+    <span class="span1"></span>
+    <span class="span2"></span>
+    <span class="span3"></span>
+  </label>
+  <div class="navigation">
+
+    <ul class="navigation__container">
+      <li class="navigation__items">
+        <a class="navigation__links" href="/">Home</a>
+      </li>
+      <li class="navigation__items">
+        <a class="navigation__links" href="/about">About</a>
+      </li>
+      <li class="navigation__items">
+        <a class="navigation__links" href="/skills">Skills</a>
+      </li>
+      <li class="navigation__items">
+        <a class="navigation__links" href="/work">Work</a>
+      </li>
+      <li class="navigation__items">
+        <a class="navigation__links" href="/contact">Contact</a>
+      </li>
+      <li class="navigation__items">
+        <a class="navigation__links" href="/resume">Resume</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content__center">
+    {{{body}}}
+  </div>
+
+
+  <!-- Core -->
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+
+  <!-- Theme JS -->
+  <script src="./assets/js/blk-design-system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  {{#if home}}
+  <script>
+    // document.ready alternative
+    (function () {
+      var typed = new Typed('.typedElement', {
+        strings: ['afsal', 'a^500 web developer'],
+        typeSpeed: 50,
+        backSpeed: 50
+      });
+      document.querySelector('.typed-cursor').style.fontSize = '20px';
+    })()
+  </script>
+  {{/if}}
+  <script>
+    let toggleButton = document.querySelector('#menuToggle');
+    if (toggleButton) {
+      toggleButton.addEventListener('click', () => {
+        document.querySelector('.navigation').classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<div class="form__container">
+  <form action="https://usebasin.com/f/c003040f6e16" class="form" method="POST">
+    <h1 class="form__title">Say Hello</h1>
+    <input type="text" name="name" placeholder="Full Name" class="form__input">
+    <input type="email" name="email" placeholder="Email" class="form__input">
+    <textarea name="message" cols="30" rows="10" class="form__textarea" placeholder="Your message"></textarea>
+    <input type="submit" value="Send Message" class="form__button">
+  </form>
+</div>
+
+<style>
+  .form {
+    background: #fff;
+    padding: 5rem 12rem 3rem;
+    border-radius: 5px;
+    color: #111;
+    width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .form__title {
+    color: #111;
+    font-weight: bold;
+    text-align: left;
+    font-size: 4rem;
+  }
+
+  .form__input,
+  .form__textarea {
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, .05);
+    font-family: inherit;
+    outline: none;
+    width: 100%;
+    transition: all 100ms;
+  }
+
+  .form__input:focus,
+  .form__textarea:focus {
+    transform: scale(1.02);
+  }
+
+  .form__input::placeholder,
+  .form__textarea::placeholder {
+    font-weight: bold;
+    color: #999;
+  }
+
+  .form__input {
+    height: 5rem;
+  }
+
+  .form__textarea {
+    height: 15rem;
+  }
+
+  .form__button {
+    background: rgb(225, 78, 202);
+    color: #fff;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 1rem 3rem 0 rgba(225, 78, 202, 0.5);
+    transition: all 100ms;
+  }
+
+  .form__button:hover,
+  .form__button:focus {
+    background: rgb(144, 60, 131);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 56.25em) {
+    .form {
+      padding: 3rem 10rem 3rem;
+      width: 50rem;
+    }
+  }
+
+  @media (max-width : 37.25em) {
+    .form {
+      width: 40rem;
+      padding: 3rem 8rem 3rem;
+    }
+
+    .form__input {
+      height: 3rem;
+    }
+
+  }
+
+
+  @media (max-width : 28em) {
+    .form {
+      width: 30rem;
+      padding: 2rem 5rem 2rem;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+  var form = document.querySelector(".form");
+  var formMessage = document.querySelector(".form__container");
+  form.onsubmit = function (event) {
+    event.preventDefault();
+    var formData = new FormData(form);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", form.action, true);
+    xhr.onload = function (e) {
+      var response = JSON.parse(xhr.response);
+      if (xhr.status === 200) {
+        formMessage.innerHTML = "<h1>Message Received. Thanks!</h1><p style='font-size : 18px'>I'll be in touch with you shortly</p>";
+      } else {
+        formMessage.innerHTML = "<h1>Sorry, Message Request Failed.</h1><p style='font-size:20px'>Please Contact me : mhdafsalvp@gmail.com</p>"
+      }
+    };
+    xhr.send(formData);
+  };
+</script>
